@@ -1,0 +1,11 @@
+#!/bin/bash
+
+CHECK_IP=$(sudo ifconfig)
+
+echo $CHECK_IP
+
+curl -k -X POST -H "Authorization: Bearer yours” -H "Content-Type: application/json" -H "Cache-Control: no-cache" -H "Postman-Token: yours” -d "{
+  \"roomId\": \”yours\”,
+  \"text\": \"$CHECK_IP\"
+  }"  https://api.ciscospark.com/v1/messages
+
